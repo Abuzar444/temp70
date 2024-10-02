@@ -1,5 +1,4 @@
 import { formatQuantity } from "@/utils/format";
-import PropertyRating from "../card/PropertyRating";
 
 type PropertyDetailsProps = {
   details: {
@@ -14,7 +13,7 @@ export default function PropertyDetails({
   details: { bedrooms, baths, guests, beds },
 }: PropertyDetailsProps) {
   return (
-    <p className="text-md font-light ">
+    <p className='text-md font-light '>
       <span>{formatQuantity(bedrooms, "bedroom")} &middot; </span>
       <span>{formatQuantity(baths, "bath")} &middot; </span>
       <span>{formatQuantity(guests, "guest")} &middot; </span>
