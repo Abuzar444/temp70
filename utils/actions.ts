@@ -210,7 +210,7 @@ export const fetchFavoriteId = async ({
       id: true,
     },
   });
-  console.log(propertyId);
+  console.log(favorite);
   return favorite?.id || null;
 };
 
@@ -221,7 +221,7 @@ export const toggleFavoriteAction = async (prevState: {
 }) => {
   const user = await getAuthUser();
   const { propertyId, favoriteId, pathname } = prevState;
-  console.log("toggleAction");
+  console.log("toggleAction" + favoriteId);
 
   try {
     if (favoriteId) {

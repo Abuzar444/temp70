@@ -7,9 +7,9 @@
 //NB: every time we make a change to the DB, must push into Prisma: `npx prisma db push`
 
 datasource db {
-  provider          = "postgresql"
-  url               = env("DATABASE_URL")
-  directUrl         = env("DIRECT_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 generator client {
@@ -17,8 +17,8 @@ generator client {
 }
 
 model TestProfile {
-id  String @id @default(uuid())
-name String
+  id   String @id @default(uuid())
+  name String
 }
 
 model Profile {
@@ -34,6 +34,7 @@ model Profile {
   properties   Property[] // each user can be associated with multiple properties
   favorites    Favorite[]
 }
+
 model Property {
   id          String     @id @default(uuid())
   name        String
@@ -60,10 +61,9 @@ model Favorite {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  profile   Profile  @relation(fields: [profileId], references: [clerkId], onDelete: Cascade)
+  profile   Profile @relation(fields: [profileId], references: [clerkId], onDelete: Cascade)
   profileId String
 
-  property   Property  @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  property   Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
   propertyId String
-
 }
