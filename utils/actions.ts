@@ -210,6 +210,7 @@ export const fetchFavoriteId = async ({
       id: true,
     },
   });
+  console.log(propertyId);
   return favorite?.id || null;
 };
 
