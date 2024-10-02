@@ -7,6 +7,7 @@ export default function PropertiesRating({
   propertyId: string;
   inPage: boolean;
 }) {
+  console.log(propertyId);
   const rating = 4.7;
   const count = 100;
 
@@ -15,7 +16,7 @@ export default function PropertiesRating({
   const countValue = `(${count}) ${inPage ? countText : ""}`;
   return (
     <span className={className}>
-      <FaStar className="w-3 h-3" />
+      <FaStar className='w-3 h-3' />
       {rating} {countValue}
     </span>
   );
